@@ -14,9 +14,11 @@
 		844A86E11D37927C002B88FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844A86E01D37927C002B88FA /* Assets.xcassets */; };
 		844A86E41D37927C002B88FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844A86E21D37927C002B88FA /* LaunchScreen.storyboard */; };
 		844A86ED1D379462002B88FA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 844A86EB1D379462002B88FA /* Model.xcdatamodeld */; };
+		A9EE0F3F356228C73BCEE00F /* libPods-ToDo List.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFFE5E31A79076160A312A74 /* libPods-ToDo List.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E23125FD05A5B64AB593625 /* Pods-ToDo List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDo List/Pods-ToDo List.debug.xcconfig"; sourceTree = "<group>"; };
 		844A86D11D37927C002B88FA /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		844A86D51D37927C002B88FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		844A86D71D37927C002B88FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		844A86E31D37927C002B88FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844A86E51D37927C002B88FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844A86EC1D379462002B88FA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		892D0E0C3A4BCED2022A9479 /* Pods-ToDo List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo List.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDo List/Pods-ToDo List.release.xcconfig"; sourceTree = "<group>"; };
+		EFFE5E31A79076160A312A74 /* libPods-ToDo List.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToDo List.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,18 +39,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9EE0F3F356228C73BCEE00F /* libPods-ToDo List.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47265C1AFD650FCD81BED07E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E23125FD05A5B64AB593625 /* Pods-ToDo List.debug.xcconfig */,
+				892D0E0C3A4BCED2022A9479 /* Pods-ToDo List.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		844A86C81D37927B002B88FA = {
 			isa = PBXGroup;
 			children = (
 				844A86EB1D379462002B88FA /* Model.xcdatamodeld */,
 				844A86D31D37927C002B88FA /* ToDo List */,
 				844A86D21D37927C002B88FA /* Products */,
+				47265C1AFD650FCD81BED07E /* Pods */,
+				E0C8A3D29E5ADB49549DDAA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +98,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E0C8A3D29E5ADB49549DDAA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFFE5E31A79076160A312A74 /* libPods-ToDo List.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 844A86E81D37927C002B88FA /* Build configuration list for PBXNativeTarget "ToDo List" */;
 			buildPhases = (
+				D30D61AB36C918F7464C3F77 /* [CP] Check Pods Manifest.lock */,
 				844A86CD1D37927C002B88FA /* Sources */,
 				844A86CE1D37927C002B88FA /* Frameworks */,
 				844A86CF1D37927C002B88FA /* Resources */,
+				E3FF8DC13F8A8472365B0DB8 /* [CP] Embed Pods Frameworks */,
+				042FE39794299D10F11D79BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +173,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		042FE39794299D10F11D79BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToDo List/Pods-ToDo List-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D30D61AB36C918F7464C3F77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3FF8DC13F8A8472365B0DB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToDo List/Pods-ToDo List-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		844A86CD1D37927C002B88FA /* Sources */ = {
@@ -265,6 +340,7 @@
 		};
 		844A86E91D37927C002B88FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E23125FD05A5B64AB593625 /* Pods-ToDo List.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ToDo List/Info.plist";
@@ -276,6 +352,7 @@
 		};
 		844A86EA1D37927C002B88FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 892D0E0C3A4BCED2022A9479 /* Pods-ToDo List.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ToDo List/Info.plist";
@@ -304,6 +381,7 @@
 				844A86EA1D37927C002B88FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
