@@ -9,7 +9,7 @@
         <!--Menu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Menu" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Menu" id="BYZ-38-t0r" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -94,7 +94,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Udc-TW-yZH">
             <objects>
-                <navigationController id="V2I-KX-YgB" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="V2I-KX-YgB" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="grQ-oU-WoB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -103,6 +103,11 @@
                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1nl-5d-RLZ">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3ge-e8-8gi"/>
                     </connections>
@@ -114,20 +119,29 @@
         <!--Your Notes-->
         <scene sceneID="CCj-i7-gRJ">
             <objects>
-                <tableViewController title="Your Notes" id="pPw-Re-MCZ" sceneMemberID="viewController">
+                <tableViewController title="Your Notes" id="pPw-Re-MCZ" customClass="ListNoteTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7j5-sr-qLL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.095365822020000005" green="1" blue="0.063684455309999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ufR-fZ-qVW">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" textLabel="kbP-4f-sr5" style="IBUITableViewCellStyleDefault" id="ufR-fZ-qVW">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ufR-fZ-qVW" id="2l7-T6-lw2">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kbP-4f-sr5">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.2413289025" blue="0.179576395" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -135,6 +149,16 @@
                             <outlet property="delegate" destination="pPw-Re-MCZ" id="hNh-cn-hLy"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Delete" id="dBa-ck-QFH">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="TXt-Dx-90m"/>
+                        <barButtonItem title="Done" id="AFF-Zm-RH1">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ko1-EJ-Zls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -143,7 +167,7 @@
         <!--Add Note-->
         <scene sceneID="Zik-Le-7BT">
             <objects>
-                <viewController title="Add Note" id="qFZ-5q-sKW" sceneMemberID="viewController">
+                <viewController title="Add Note" id="qFZ-5q-sKW" customClass="AddNoteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tYU-O0-85k"/>
                         <viewControllerLayoutGuide type="bottom" id="x7e-mv-lTd"/>
@@ -170,18 +194,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kc-aE-O3a">
-                                <rect key="frame" x="270" y="498" width="60" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="UZ1-iE-kHN"/>
-                                    <constraint firstAttribute="height" constant="30" id="v2B-Fe-iwI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IlK-Lo-WjN">
                                 <rect key="frame" x="20" y="174" width="560" height="252"/>
                                 <constraints>
@@ -194,7 +206,25 @@
                                         <exclude reference="7vz-Ly-HHR"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="qFZ-5q-sKW" id="qjm-H3-rfA"/>
+                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kc-aE-O3a">
+                                <rect key="frame" x="270" y="498" width="60" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="UZ1-iE-kHN"/>
+                                    <constraint firstAttribute="height" constant="30" id="v2B-Fe-iwI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAction:" destination="qFZ-5q-sKW" eventType="touchUpInside" id="j2F-aW-X6H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -212,6 +242,10 @@
                             <constraint firstItem="7kc-aE-O3a" firstAttribute="centerX" secondItem="pAc-q3-5Tb" secondAttribute="centerX" id="vPl-Bp-SV1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonAdd" destination="7kc-aE-O3a" id="wFM-XG-Hf6"/>
+                        <outlet property="textField" destination="IlK-Lo-WjN" id="NPf-nB-KcW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gh2-lW-9C9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

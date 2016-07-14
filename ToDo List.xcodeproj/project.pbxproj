@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8406454D1D37E03400EB5D95 /* TDNote+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406454A1D37E03400EB5D95 /* TDNote+CoreDataProperties.m */; };
+		8406454E1D37E03400EB5D95 /* TDNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406454C1D37E03400EB5D95 /* TDNote.m */; };
+		840645551D37E34F00EB5D95 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840645541D37E34F00EB5D95 /* MenuViewController.m */; };
+		840645581D37E38A00EB5D95 /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840645571D37E38A00EB5D95 /* AddNoteViewController.m */; };
+		8406455B1D37E3BE00EB5D95 /* ListNoteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406455A1D37E3BE00EB5D95 /* ListNoteTableViewController.m */; };
 		844A86D61D37927C002B88FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A86D51D37927C002B88FA /* main.m */; };
 		844A86D91D37927C002B88FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A86D81D37927C002B88FA /* AppDelegate.m */; };
 		844A86DC1D37927C002B88FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A86DB1D37927C002B88FA /* ViewController.m */; };
@@ -19,6 +24,16 @@
 
 /* Begin PBXFileReference section */
 		0E23125FD05A5B64AB593625 /* Pods-ToDo List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDo List/Pods-ToDo List.debug.xcconfig"; sourceTree = "<group>"; };
+		840645491D37E03400EB5D95 /* TDNote+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TDNote+CoreDataProperties.h"; sourceTree = "<group>"; };
+		8406454A1D37E03400EB5D95 /* TDNote+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TDNote+CoreDataProperties.m"; sourceTree = "<group>"; };
+		8406454B1D37E03400EB5D95 /* TDNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDNote.h; sourceTree = "<group>"; };
+		8406454C1D37E03400EB5D95 /* TDNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDNote.m; sourceTree = "<group>"; };
+		840645531D37E34F00EB5D95 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		840645541D37E34F00EB5D95 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		840645561D37E38A00EB5D95 /* AddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
+		840645571D37E38A00EB5D95 /* AddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
+		840645591D37E3BE00EB5D95 /* ListNoteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListNoteTableViewController.h; sourceTree = "<group>"; };
+		8406455A1D37E3BE00EB5D95 /* ListNoteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListNoteTableViewController.m; sourceTree = "<group>"; };
 		844A86D11D37927C002B88FA /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		844A86D51D37927C002B88FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		844A86D71D37927C002B88FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,10 +70,58 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		840645481D37DFC900EB5D95 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				840645491D37E03400EB5D95 /* TDNote+CoreDataProperties.h */,
+				8406454A1D37E03400EB5D95 /* TDNote+CoreDataProperties.m */,
+				8406454B1D37E03400EB5D95 /* TDNote.h */,
+				8406454C1D37E03400EB5D95 /* TDNote.m */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		8406454F1D37E06800EB5D95 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				840645501D37E07F00EB5D95 /* Menu */,
+				840645511D37E08600EB5D95 /* AddNote */,
+				840645521D37E09000EB5D95 /* ListNote */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		840645501D37E07F00EB5D95 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				840645531D37E34F00EB5D95 /* MenuViewController.h */,
+				840645541D37E34F00EB5D95 /* MenuViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		840645511D37E08600EB5D95 /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				840645561D37E38A00EB5D95 /* AddNoteViewController.h */,
+				840645571D37E38A00EB5D95 /* AddNoteViewController.m */,
+			);
+			name = AddNote;
+			sourceTree = "<group>";
+		};
+		840645521D37E09000EB5D95 /* ListNote */ = {
+			isa = PBXGroup;
+			children = (
+				840645591D37E3BE00EB5D95 /* ListNoteTableViewController.h */,
+				8406455A1D37E3BE00EB5D95 /* ListNoteTableViewController.m */,
+			);
+			name = ListNote;
+			sourceTree = "<group>";
+		};
 		844A86C81D37927B002B88FA = {
 			isa = PBXGroup;
 			children = (
-				844A86EB1D379462002B88FA /* Model.xcdatamodeld */,
 				844A86D31D37927C002B88FA /* ToDo List */,
 				844A86D21D37927C002B88FA /* Products */,
 				47265C1AFD650FCD81BED07E /* Pods */,
@@ -77,10 +140,13 @@
 		844A86D31D37927C002B88FA /* ToDo List */ = {
 			isa = PBXGroup;
 			children = (
+				8406454F1D37E06800EB5D95 /* Controllers */,
+				840645481D37DFC900EB5D95 /* Model */,
 				844A86D71D37927C002B88FA /* AppDelegate.h */,
 				844A86D81D37927C002B88FA /* AppDelegate.m */,
 				844A86DA1D37927C002B88FA /* ViewController.h */,
 				844A86DB1D37927C002B88FA /* ViewController.m */,
+				844A86EB1D379462002B88FA /* Model.xcdatamodeld */,
 				844A86DD1D37927C002B88FA /* Main.storyboard */,
 				844A86E01D37927C002B88FA /* Assets.xcassets */,
 				844A86E21D37927C002B88FA /* LaunchScreen.storyboard */,
@@ -227,10 +293,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840645581D37E38A00EB5D95 /* AddNoteViewController.m in Sources */,
 				844A86DC1D37927C002B88FA /* ViewController.m in Sources */,
 				844A86D91D37927C002B88FA /* AppDelegate.m in Sources */,
 				844A86D61D37927C002B88FA /* main.m in Sources */,
 				844A86ED1D379462002B88FA /* Model.xcdatamodeld in Sources */,
+				840645551D37E34F00EB5D95 /* MenuViewController.m in Sources */,
+				8406454D1D37E03400EB5D95 /* TDNote+CoreDataProperties.m in Sources */,
+				8406455B1D37E3BE00EB5D95 /* ListNoteTableViewController.m in Sources */,
+				8406454E1D37E03400EB5D95 /* TDNote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +463,8 @@
 				844A86EC1D379462002B88FA /* Model.xcdatamodel */,
 			);
 			currentVersion = 844A86EC1D379462002B88FA /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			name = Model.xcdatamodeld;
+			path = ../Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

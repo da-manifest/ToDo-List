@@ -7,8 +7,12 @@
 //
 
 #import "ListNoteTableViewController.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import "TDNote.h"
 
-@interface ListNoteTableViewController ()
+@interface ListNoteTableViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, readwrite, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -16,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.fetchedResultsController = [TDNote MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:nil ascending:YES];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -31,25 +36,28 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.fetchedResultsController.sections.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    id <NSFetchedResultsSectionInfo> info = self.fetchedResultsController.sections[section];
+    return [info numberOfObjects];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"noteCell"  forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    TDNote *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [cell.textLabel setText:note.name];
+  
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
