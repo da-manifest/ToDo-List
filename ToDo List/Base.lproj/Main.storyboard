@@ -159,6 +159,9 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="TXt-Dx-90m"/>
                         <barButtonItem title="Done" id="AFF-Zm-RH1">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="isDoneAction:" destination="pPw-Re-MCZ" id="B2y-hK-yTV"/>
+                            </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

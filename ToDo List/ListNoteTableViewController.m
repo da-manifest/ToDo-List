@@ -40,13 +40,24 @@
     TDNote *note = [self.fetchedResultsController objectAtIndexPath:[self currentSellectedRowIndexPath]];
     [note MR_deleteEntity];
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    
     [[self tableView] reloadData];
     [self buttonLogic];
 }
 
 -(IBAction)isDoneAction:(id)sender
 {
+    TDNote *note = [self.fetchedResultsController objectAtIndexPath:[self currentSellectedRowIndexPath]];
+    NSString *text = [NSString stringWithFormat:@"%@ - DONE!", note.name];
     
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+        note.name = text;
+    } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    }];
+    
+    [[self tableView] reloadData];
+    [self buttonLogic];
 }
 
 - (void)cellSelected:(NSNotification *)sender;
@@ -57,8 +68,16 @@
 
 - (void)buttonLogic
 {
-    if ([self currentSellectedRowIndexPath] == nil) [[self buttonDelete] setEnabled:NO];
-    else [[self buttonDelete] setEnabled:YES];
+    if ([self currentSellectedRowIndexPath] == nil)
+    {
+        [[self buttonDelete] setEnabled:NO];
+        [[self buttonDone] setEnabled:NO];
+    }
+    else
+    {
+        [[self buttonDelete] setEnabled:YES];
+        [[self buttonDone] setEnabled:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
