@@ -152,6 +152,9 @@
                     <toolbarItems>
                         <barButtonItem title="Delete" id="dBa-ck-QFH">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="deleteAction:" destination="pPw-Re-MCZ" id="bve-4f-0kG"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="TXt-Dx-90m"/>
                         <barButtonItem title="Done" id="AFF-Zm-RH1">
@@ -159,6 +162,10 @@
                         </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="buttonDelete" destination="dBa-ck-QFH" id="lRc-s5-yCa"/>
+                        <outlet property="buttonDone" destination="AFF-Zm-RH1" id="5Gq-AC-aFS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ko1-EJ-Zls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -211,7 +218,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kc-aE-O3a">
-                                <rect key="frame" x="270" y="498" width="60" height="30"/>
+                                <rect key="frame" x="270" y="454" width="60" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="UZ1-iE-kHN"/>
